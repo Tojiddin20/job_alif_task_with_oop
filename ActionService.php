@@ -54,7 +54,8 @@
 			$sum = 0;
 
 			foreach($data as $key => $line) {
-				$sum += end(explode(" ", trim($line)));
+				$explode = explode(" ", trim($line));
+				$sum += end($explode);
 			}
 
 			return "Sum of all product prices is $sum";

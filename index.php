@@ -1,5 +1,5 @@
-<?php 
-	include('Product.php');
+<?php
+ 	include('Product.php');
 	include('ActionService.php');
 
 	function run() {
@@ -15,22 +15,20 @@
 			switch ($action) {
 				case 'add':
 					echo "Enter product name ";
-					$name = fgets($input);
+					$name = trim(fgets($input));
 					echo "Enter product price ";
-					$price = fgets($input);
+					$price = trim(fgets($input));
 					echo $actionService->add('data.txt', new Product($name, $price));
-
 					break;
 				case 'edit':
 					echo "Enter product number ";
-					$productNumber = fgets($input);
+					$productNumber = trim(fgets($input));
 					echo $actionService->edit($fileName, $productNumber);				
 					break;
 				case 'delete':
 					echo "Enter product number ";
-					$productNumber = fgets($input);
+					$productNumber = trim(fgets($input));
 					echo $actionService->delete($fileName, $productNumber);
-
 					break;
 				case 'sum':
 					echo $actionService->sum($fileName);					
